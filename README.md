@@ -35,7 +35,7 @@
 
 Accede a la versión desplegada en Replit sin necesidad de instalar nada:
 
-[Próximamente - agregar URL de Replit aquí]
+[Ejecutor-Python](https://ejecutor-python--juantrillini.replit.app/)
 
 ### Opción 2: Ejecución Local
 
