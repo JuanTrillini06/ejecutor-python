@@ -8,8 +8,13 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 current_dir = os.path.dirname(os.path.realpath(__file__))
-app.mount("/static", StaticFiles(directory=os.path.join(current_dir, "styles")), name="static")
-templates = Jinja2Templates(directory=os.path.join(current_dir, "templates"))
+
+# Montar archivos estáticos PRIMERO
+styles_path = os.path.join(current_dir, "styles")
+templates_path = os.path.join(current_dir, "templates")
+
+app.mount("/static", StaticFiles(directory=styles_path), name="static")
+templates = Jinja2Templates(directory=templates_path)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
