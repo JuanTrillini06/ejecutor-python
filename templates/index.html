@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <title>Ejecutor python</title>
+</head>
+<body class = "pagina">
+    <h1 class = "titulo">Editor de código Python</h1>
+    
+    <form class = "contenedor-editor" action="/ejecutar" method="post">
+        <textarea class="editor" name="codigo" rows="10" cols="50" required placeholder="Escribe tu código aquí...">{{ codigo_previo }}</textarea>
+        <br>
+        <button class="boton-enviar" type="submit">Evaluá tu código</button>
+    </form>
+
+    {% if resultado %}
+    <section class = "resultado-contenido">
+        <h2 class = "resultado">Resultado</h2>
+        <br>
+        <pre>{{ resultado }}</pre>
+    </section>
+    {% endif %}
+</body>
+</html>
