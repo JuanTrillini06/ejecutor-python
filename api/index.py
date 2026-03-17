@@ -412,6 +412,7 @@ HOWUSE_TEMPLATE = """<!DOCTYPE html>
         
         <ol class = "lista">
             <li>Escribe tu código Python en el área de texto proporcionada.</li>
+            <li>Recordatorio: No admite inputs, declara y asigna valores a variables.</li>
             <li>Haz clic en el botón "Evaluá tu código" para ejecutar el código que has escrito.</li>
             <li>El resultado de la ejecución se mostrará debajo del botón, en la sección "Resultado".</li>
         </ol>
