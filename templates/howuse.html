@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <title>Ejecutor python</title>
+</head>
+<body class = "pagina">
+    <header class = "cabecera">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav class = "navegacion" id="menuNav">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/como-funciona">¿Cómo usarlo?</a></li>
+                <li><a href="https://docs.python.org/es/3/" target="_blank">Documentacion Python</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class = "como-funciona-contenido">
+        <h1 class = "titulo">¿Cómo usar este editor de código Python?</h1>
+    
+        <p class = "parrafo">Este editor de código Python te permite escribir y ejecutar código Python directamente en tu navegador. Para usarlo, sigue estos pasos:</p>
+        
+        <ol class = "lista">
+            <li>Escribe tu código Python en el área de texto proporcionada.</li>
+            <li>Haz clic en el botón "Evaluá tu código" para ejecutar el código que has escrito.</li>
+            <li>El resultado de la ejecución se mostrará debajo del botón, en la sección "Resultado".</li>
+        </ol>
+
+        <p class = "parrafo">Este editor admite caracteres comprendidos en el conjunto de caracteres UTF-8. Por ejemplo:</p>
+
+        <ul class = "lista-secundaria">
+            <li>Caracteres acentuados: á, é, í, ó, ú</li>
+            <li>Caracteres especiales: ñ, ü, ç</li>
+            <li>Símbolos: @, #, $, %, ^, &, *, (, )</li>
+            <li>Comillas rectas: ', ". NO comillas curvas: “, ”</li>
+        </ul>
+
+        <p class = "parrafo">Puedes escribir cualquier código Python válido, desde operaciones simples hasta funciones más complejas. ¡Diviértete programando!</p>
+    </main>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menuNav = document.getElementById('menuNav');
+            menuNav.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.navegacion a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menuNav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

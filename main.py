@@ -21,6 +21,10 @@ async def home(request: Request):
     # Renderiza la página inicial
     return templates.TemplateResponse("index.html", {"request": request, "resultado": ""})
 
+@app.get("/como-funciona", response_class=HTMLResponse)
+async def how_to_use(request: Request):
+    return templates.TemplateResponse("howuse.html", {"request": request})
+
 @app.post("/ejecutar", response_class=HTMLResponse)
 async def ejecutar_codigo(request: Request, codigo: str = Form(...)):
     if not codigo.strip():
