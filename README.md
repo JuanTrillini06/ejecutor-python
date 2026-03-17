@@ -11,6 +11,7 @@
 - ✅ Captura de salida y errores en tiempo real
 - ✅ Soporte para múltiples tipos de scripts
 - ✅ Almacenamiento del código ejecutado en la sesión
+- ✅ Menú hamburguesa responsive para dispositivos móviles
 
 ---
 
@@ -18,34 +19,33 @@
 
 ### Backend
 
-- **Python 3.12** - Lenguaje de programación
+- **Python 3.11+** - Lenguaje de programación
 - **FastAPI** - Framework web moderno y de alto rendimiento
 - **Uvicorn** - Servidor ASGI
 
 ### Frontend
 
 - **HTML5** - Estructura semántica
-- **CSS3** - Estilos responsivos con diseño moderno
+- **CSS3** - Estilos responsivos con diseño moderno y animaciones
+
+### Hosting
+
+- **Vercel** - Plataforma de deployment para funciones serverless
 
 ---
 
-## 🚀 Cómo Usar
+## 🚀 Despliegue en Vercel (Recomendado)
 
-### Opción 1: En Línea (Recomendado)
+---
 
-Accede a la versión desplegada en Replit sin necesidad de instalar nada:
+## 💻 Ejecución Local
 
-[Ejecutor-Python](https://ejecutor-python--juantrillini.replit.app/)
-
-### Opción 2: Ejecución Local
-
-#### Requisitos previos
+### Requisitos previos
 
 - Python 3.9+
 - pip (gestor de paquetes de Python)
-- Git (opcional, para clonar el repositorio)
 
-#### Pasos de instalación
+### Pasos de instalación
 
 1. **Clona el repositorio**
 
@@ -63,11 +63,11 @@ Accede a la versión desplegada en Replit sin necesidad de instalar nada:
 3. **Ejecuta el servidor**
 
    ```bash
-   python -m uvicorn main:app --reload
+   python -m uvicorn api.index:app --reload --host 0.0.0.0 --port 3000
    ```
 
 4. **Accede a la aplicación**
-   Abre tu navegador e ingresa a: `http://127.0.0.1:8000`
+   Abre tu navegador e ingresa a: `http://localhost:3000`
 
 ---
 
@@ -75,29 +75,58 @@ Accede a la versión desplegada en Replit sin necesidad de instalar nada:
 
 ``` bash
 ejecutor-python/
-├── main.py                 # Aplicación principal (FastAPI)
-├── requirements.txt        # Dependencias del proyecto
-├── templates/
-│   └── index.html         # Página principal
-└── styles/
-    └── style.css          # Estilos de la aplicación
+├── api/
+│   └── index.py              # Aplicación principal (FastAPI) - Para Vercel
+├── main.py                   # Versión local de la app
+├── requirements.txt          # Dependencias del proyecto
+├── vercel.json              # Configuración de Vercel
+├── vercel.txt               # Guía completa de deploy
+├── .gitignore               # Archivos ignorados por Git
+├── templates/               # Templates HTML (opcional)
+│   ├── index.html
+│   └── howuse.html
+└── styles/                  # Estilos CSS (opcional)
+    └── style.css
 ```
 
 ---
 
-## 💡 Ejemplos de Uso
+## 📖 Cómo Usar
 
-### Ejemplo 1: Imprime un saludo
+1. **Escribe tu código Python** en el área de texto
+2. **Haz clic en "Evaluá tu código"** para ejecutarlo
+3. **Ve el resultado** en la sección de resultados
+
+### Características de código soportadas
+
+- ✅ Funciones y clases
+- ✅ Bucles (for, while)
+- ✅ Condicionales (if, else)
+- ✅ Operaciones matemáticas
+- ✅ Manipulación de strings
+- ✅ Listas y diccionarios
+- ✅ Importación de módulos estándar de Python
+
+### Limitaciones
+
+- ⚠️ No se pueden ejecutar operaciones que requieran interacción del usuario
+- ⚠️ No se pueden instalar paquetes externos durante la ejecución
+- ⚠️ Timeout de ejecución para prevenir bucles infinitos
+
+---
+
+## Ejemplo 1: Hola mundo
 
 ```python
-print("¡Hola, mundo!")
+print("hola mundo!")
 ```
 
-### Ejemplo 2: Operaciones matemáticas
+## Ejemplo 2: Operacion suma
 
-```python
-numero = 10
-resultado = numero * 2
+``` python
+numUno = 1
+numDos = 2
+resultado = numUno + numDos
 print(f"El resultado es: {resultado}")
 ```
 
@@ -115,8 +144,8 @@ for num in numeros:
 
 No se requiere configuración adicional. La aplicación funciona con los siguientes parámetros predeterminados:
 
-- **Host:** `127.0.0.1`
-- **Puerto:** `8000`
+- **Host:** `localhost`
+- **Puerto:** `3000`
 - **Modo de recarga:** Habilitado para desarrollo
 
 ---
