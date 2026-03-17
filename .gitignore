@@ -28,6 +28,8 @@ Thumbs.db
 dist/
 build/
 
-"templates/"
-"styles/"
-"main.py"
+# Local development files (not needed for Vercel)
+templates/
+styles/
+main.py
+
